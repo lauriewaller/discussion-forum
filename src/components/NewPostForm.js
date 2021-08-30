@@ -8,7 +8,8 @@ function NewPostForm(props) {
     <>
       <form formSubmissionHandler={handleNewPostFormSubmission}>
         <input type="text" name="name" placeholder="Author Name" />
-        <textarea type="text" name="post-text" placeholder="Write Your Post" />
+        <input type="text" name="title" placeholder="Post Title" />
+        <textarea type="text" name="postText" placeholder="Write Your Post" />
         <button type="submit">{props.buttonText}</button>
       </form>
     </>
@@ -18,15 +19,15 @@ function NewPostForm(props) {
     event.preventDefault();
     props.onNewFormCreation({
       name: event.target.name.value,
-      post: event.target.post.value,
-      issue: event.target.issue.value,
+      post: event.target.postText.value,
+      title: event.target.title.value,
       id: v4(),
       timeOpen: new Moment(),
       formattedWaitTime: new Moment().fromNow(true),
     });
-    console.log(event.target.names.value);
-    console.log(event.target.location.value);
-    console.log(event.target.issue.value);
+    console.log(event.target.name.value);
+    console.log(event.target.title.value);
+    console.log(event.target.postText.value);
   }
 }
 

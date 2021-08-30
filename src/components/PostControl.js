@@ -1,4 +1,5 @@
 import React from "react";
+import NewPostForm from "./NewPostForm";
 
 class PostControl extends React.Component {
   render() {
