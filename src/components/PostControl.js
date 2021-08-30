@@ -1,7 +1,6 @@
 import React from "react";
 import NewPostForm from "./NewPostForm";
 import PostList from "./PostList";
-import Post from "./Post";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import * as a from "./../actions";
