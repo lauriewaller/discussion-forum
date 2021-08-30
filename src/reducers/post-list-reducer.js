@@ -15,6 +15,12 @@ export default (state = {}, action) => {
           formattedWaitTime: formattedWaitTime,
         },
       });
+    case c.UPDATE_TIME:
+      const newPost = Object.assign({}, state[id], { formattedWaitTime });
+      const updatedState = Object.assign({}, state, {
+        [id]: newPost,
+      });
+      return updatedState;
     default:
       return state;
   }

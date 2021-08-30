@@ -6,18 +6,18 @@ import Moment from "moment";
 function NewPostForm(props) {
   return (
     <>
-      <form formSubmissionHandler={handleNewPostFormSubmission}>
+      <form onSubmit={handleNewPostFormSubmission}>
         <input type="text" name="name" placeholder="Author Name" />
         <input type="text" name="title" placeholder="Post Title" />
         <textarea type="text" name="postText" placeholder="Write Your Post" />
-        <button type="submit">{props.buttonText}</button>
+        <button type="submit">Submit</button>
       </form>
     </>
   );
 
   function handleNewPostFormSubmission(event) {
     event.preventDefault();
-    props.onNewFormCreation({
+    props.onNewPostCreation({
       name: event.target.name.value,
       post: event.target.postText.value,
       title: event.target.title.value,
