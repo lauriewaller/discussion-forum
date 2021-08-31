@@ -9,7 +9,7 @@ function NewPostForm(props) {
       <form onSubmit={handleNewPostFormSubmission}>
         <input type="text" name="name" placeholder="Author Name" />
         <input type="text" name="title" placeholder="Post Title" />
-        <textarea type="text" name="postText" placeholder="Write Your Post" />
+        <textarea name="postText" placeholder="Write Your Post" />
         <button type="submit">Submit</button>
       </form>
     </>
@@ -19,7 +19,7 @@ function NewPostForm(props) {
     event.preventDefault();
     props.onNewPostCreation({
       name: event.target.name.value,
-      post: event.target.postText.value,
+      postText: event.target.postText.value,
       title: event.target.title.value,
       id: v4(),
       timeOpen: new Moment(),
