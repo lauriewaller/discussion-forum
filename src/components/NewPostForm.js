@@ -23,7 +23,7 @@ function NewPostForm(props) {
       title: event.target.title.value,
       id: v4(),
       timeOpen: new Moment(),
-      formattedWaitTime: new Moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
+      formattedWaitTime: new Moment().calendar(),
     });
     console.log(event.target.name.value);
     console.log(event.target.title.value);

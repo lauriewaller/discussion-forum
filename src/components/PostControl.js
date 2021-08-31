@@ -15,10 +15,10 @@ class PostControl extends React.Component {
   }
 
   componentDidMount() {
-    this.waitTimeUpdateTimer = setInterval(
-      () => this.updatePostElapsedWaitTime(),
-      60000
-    );
+    // this.waitTimeUpdateTimer = setInterval(
+    //   () => this.updatePostElapsedWaitTime(),
+    //   60000
+    // );
   }
 
   componentWillUnmount() {
