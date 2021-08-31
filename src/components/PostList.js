@@ -14,8 +14,12 @@ function PostList(props) {
             title={post.title}
             postText={post.postText}
             formattedWaitTime={post.formattedWaitTime}
+            reviewed={post.reviewed}
+            approved={post.approved}
+            votes={post.votes}
             id={post.id}
             key={post.id}
+            whenUpvoteClicked={props.onClickingUpvote}
           />
         );
       })}

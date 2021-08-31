@@ -2,7 +2,17 @@
 import * as c from "./../actions/ActionTypes";
 
 export default (state = {}, action) => {
-  const { name, title, postText, id, formattedWaitTime, timeOpen } = action;
+  const {
+    name,
+    title,
+    postText,
+    id,
+    formattedWaitTime,
+    timeOpen,
+    approved,
+    reviewed,
+    votes,
+  } = action;
   switch (action.type) {
     case c.ADD_POST:
       return Object.assign({}, state, {
@@ -13,6 +23,9 @@ export default (state = {}, action) => {
           id: id,
           timeOpen: timeOpen,
           formattedWaitTime: formattedWaitTime,
+          approved: approved,
+          reviewed: reviewed,
+          votes: votes,
         },
       });
     case c.UPDATE_TIME:

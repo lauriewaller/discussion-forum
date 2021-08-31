@@ -5,7 +5,17 @@ export const toggleForm = () => ({
 });
 
 export const addPost = (post) => {
-  const { name, title, postText, id, formattedWaitTime, timeOpen } = post;
+  const {
+    name,
+    title,
+    postText,
+    id,
+    formattedWaitTime,
+    timeOpen,
+    approved,
+    reviewed,
+    votes,
+  } = post;
   return {
     type: c.ADD_POST,
     name: name,
@@ -14,6 +24,9 @@ export const addPost = (post) => {
     id: id,
     formattedWaitTime,
     timeOpen: timeOpen,
+    approved: approved,
+    reviewed: reviewed,
+    votes: votes,
   };
 };
 

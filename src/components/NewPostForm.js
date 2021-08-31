@@ -24,6 +24,9 @@ function NewPostForm(props) {
       id: v4(),
       timeOpen: new Moment(),
       formattedWaitTime: new Moment().calendar(),
+      approved: false,
+      reviewed: false,
+      votes: 0,
     });
     console.log(event.target.name.value);
     console.log(event.target.title.value);

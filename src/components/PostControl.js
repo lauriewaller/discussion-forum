@@ -49,6 +49,19 @@ class PostControl extends React.Component {
     dispatch(action2);
   };
 
+  handleUpvote = (id) => {
+    let selectedPost = this.state.masterPostList.filter(
+      (post) => post.id === id
+    );
+    selectedPost[0].pints--;
+    const updatedPintPost = this.state.masterPostList
+      .filter((post) => post.id !== id)
+      .concat(selectedPost);
+    this.setState({
+      masterPostList: updatedPintPost,
+    });
+  };
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -62,6 +75,7 @@ class PostControl extends React.Component {
       currentlyVisibleState = (
         <PostList
           postList={this.props.masterPostList}
+          onClickingUpvote={this.handleUpvote}
           //onPostSelection={this.handleChangingSelectedPost}
         />
       );
